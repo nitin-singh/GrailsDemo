@@ -10,7 +10,7 @@
 
 <div class="panel-body">
 <!--Form Opening-->
-    <g:uploadForm class="form-vertical" controller="user" action="registeration">
+    <g:form class="form-vertical" controller="user" action="registeration">
         <div class="form-group">
             <label class="control-label col-sm-4">First Name *</label>
 
@@ -64,7 +64,7 @@
             <g:actionSubmit value="Register" action="registeration" name="Register" class="btn btn-default"
                             style="float:right; background-color:#d2d4d9"></g:actionSubmit>
         </div>
-    </g:uploadForm>
+    </g:form>
 <!--Form Closing-->
 </div>
 </body>

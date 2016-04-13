@@ -12,9 +12,9 @@ class User {
     Date lastUpdated
     static transients = ['confirmPassword']
 
-    String toString(){
+    /*String toString(){
         "${firstName} ${lastName}"
-    }
+    }*/
 
     static constraints = {
         userName(nullable: false, blank: false)

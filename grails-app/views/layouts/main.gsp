@@ -7,7 +7,8 @@
         <g:layoutTitle default="Grails"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <asset:javascript src="application.js"/>
     <asset:stylesheet src="application.css"/>
 
     <g:layoutHead/>
@@ -37,7 +38,7 @@
         </div>
     </div>
     <g:layoutBody/>
-    <asset:javascript src="application.js"/>
+
 
 </body>
 </html>
