@@ -22,7 +22,6 @@
         $(document).ready(function() {
             jQuery('#example').dataTable();
         } );
-
     </script>
 </head>
 
