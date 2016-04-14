@@ -52,14 +52,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="control-label col-sm-4">Confirm Password *</label>
-
-            <div class="col-sm-8">
-                <g:passwordField name="confirmPassword" id="confirmPassword" class="form-control"></g:passwordField>
-            </div>
-        </div>
-
         <div>
             <g:actionSubmit value="Register" action="registeration" name="Register" class="btn btn-default"
                             style="float:right; background-color:#d2d4d9"></g:actionSubmit>
