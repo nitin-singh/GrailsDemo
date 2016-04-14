@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/dataTables.jqueryui.min.js"></script>
-    <asset:stylesheet href="jquery-ui.css" />
+    <asset:stylesheet href="jquery-ui.css"/>
     <asset:stylesheet href="dataTables.jqueryui.min.css"/>
     <style>
     body {
@@ -18,31 +18,18 @@
     }
     </style>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            jQuery('#example').dataTable();
-        } );
-
-      /*var table = jQuery("#example").DataTable({
-          "processing": true,
-          "serverSide": true,
-          "ajax": {
-              "url": "/user/viewPage",
-              "type": "post"
-          },
-          "columns": [
-              {"data": "id"},
-              {"data": "firstName"},
-              {"data": "lastName"},
-              {"data": "userName"},
-              {"data": "email"},
-          ]
-      });*/
-
-    </script>
 </head>
 
 <body>
+
+<g:if test="${flash.message}">
+    <div class="alert alert-success">${flash.message}</div>
+</g:if>
+
+<g:if test="${flash.error}">
+    <div class="alert alert-danger">${flash.error}</div>
+</g:if>
+
 <div class="container">
     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -52,12 +39,12 @@
             <th>Last Name</th>
             <th>User Name</th>
             <th>Email</th>
-            <th>Edit</th>
-            <th>Delete</th>
+           %{-- <th>Edit</th>
+            <th>Delete</th>--}%
         </tr>
         </thead>
 
-        <tfoot>
+       %{-- <tfoot>
         <tr>
             <th>S.No</th>
             <th>First Name</th>
@@ -67,22 +54,37 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-        </tfoot>
-
-        <tbody>
-        <g:each in="${userList}" var="user">
-            <tr>
-                <td>${user.id}</td>
-                <td>${user.firstName}</td>
-                <td>${user.lastName}</td>
-                <td>${user.userName}</td>
-                <td>${user.email}</td>
-                <td><g:link controller="user" action="edit" params="[userId: user.id]">Edit</g:link></td>
-                <td><g:link controller="user" action="delete" params="[userId: user.id]">Delete</g:link></td>
-            </tr>
-        </g:each>
-        </tbody>
+        </tfoot>--}%
     </table>
 </div>
+
+<script type="text/javascript">
+   /* $(document).ready(function () {
+        jQuery('#example').dataTable();
+    });*/
+
+    $(document).ready(function () {
+
+        var table = jQuery("#example").dataTable({
+//            "dom": '<"top"iflp<"clear">>r<"table-data"t><"bottom"iflp<"clear">>',
+            "bFilter": true,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "/user/fetchUsers",
+                "type": "get"
+            },
+            "columns": [
+                {"data": "id"},
+                {"data": "firstName"},
+                {"data": "lastName"},
+                {"data": "userName"},
+                {"data": "email"}/*,
+                {"data": "Edit"},
+                {"data": "Delete"}*/
+            ]
+        });
+    });
+</script>
 </body>
 </html>

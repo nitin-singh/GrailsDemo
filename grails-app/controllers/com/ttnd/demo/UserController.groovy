@@ -1,6 +1,8 @@
 package com.ttnd.demo
 
 import com.ttnd.demo.CO.*
+import com.ttnd.demo.VO.*
+import grails.converters.JSON
 
 class UserController {
 
@@ -27,8 +29,8 @@ class UserController {
     }
 
     def viewPage() {
-        List<User> userList = User.findAll()
-        render(view: '/user/view', model: [userList: userList])
+//        List<User> userList = User.findAll()
+        render(view: '/user/view')
     }
 
     def delete(Long userId) {
@@ -68,5 +70,18 @@ class UserController {
             flash.error = "Problem in loading user."
         }
         redirect(controller: 'user', action: 'viewPage')
+    }
+
+    def fetchUsers(SearchCO searchCO) {
+        println "--------------------------------------------------"
+        println params
+        println "--------------------------------------------------"
+        searchCO.max = params.length ? params.int("length") : 10
+        searchCO.offset = params.start ? params.int("start") : 0
+        List<User> userList = User.search(searchCO).list(max: searchCO.max, offset: searchCO.offset, order: searchCO.order, sort: searchCO.order)
+        List<UserVO> users = userList.collect {
+            new UserVO(id: it.id, firstName: it.firstName, lastName: it.lastName, userName: it.userName, email: it.email)
+        }
+        render(["data": users, "recordsTotal": User.count(), "recordsFiltered": User.count()] as JSON)
     }
 }
