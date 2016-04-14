@@ -1,6 +1,6 @@
 package com.ttnd.demo
 
-import com.ttnd.demo.RegisterCO
+import com.ttnd.demo.CO.*
 
 class UserController {
 
@@ -45,23 +45,25 @@ class UserController {
     def edit(Long userId) {
         println userId
         User user = User.findById(userId as Long)
-        println "-----------------${user}-------------------"
         render(view: '/user/edit', model: [user: user])
     }
 
     def editPage(Long userId) {
-        println "--------------------Inside EditPage------------------"
-        println "---------------${params}-----------------"
-        println "---------------${userId}-----------------"
-
-        User user = User.findById(userId as Long)
-        println "---------------${user}-----------------"
+        User user = User.get(userId as Long)
         if (user) {
-            bindData(user, params, exclude: ['password'])
+            user.firstName = params.firstName
+            user.lastName = params.lastName
+            user.email = params.email
+            user.userName = params.userName
             if (user.password) {
                 user.password = params.password
             }
-            flash.message = "User updated successfully."
+            if (user.validate()) {
+                user.save(flush: true)
+                flash.message = "User updated successfully."
+            } else {
+                flash.error = "Problem in saving user."
+            }
         } else {
             flash.error = "Problem in loading user."
         }
