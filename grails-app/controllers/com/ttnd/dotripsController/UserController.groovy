@@ -16,14 +16,8 @@ class UserController {
 
     def registeration(RegisterCO registerCO) {
         String msg = ""
-        println "Inside Register."
         User user = new User()
         user.properties = registerCO.properties
-        println "------------------------------------------"
-        println registerCO.properties
-        println "------------------------------------------"
-        println user.properties
-        println user.validate()
         if (user.validate()) {
             user.save(flush: true)
             msg = "User saved successfully."
@@ -38,10 +32,7 @@ class UserController {
     }
 
     def viewPage() {
-        println "-----------------------------------------------------------------------"
-        println "inside view"
         List<User> userList = User.findAll()
-        println userList
         render(view: '/user/view', model: [userList: userList])
     }
 
@@ -68,7 +59,6 @@ class UserController {
         println "--------------------Inside EditPage------------------"
         println "---------------${params}-----------------"
         println "---------------${userId}-----------------"
-
         User user = User.load(userId as Long)
         println "---------------${user}-----------------"
         if (user) {
