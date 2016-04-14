@@ -8,7 +8,7 @@ class RegisterCO implements Validateable{
     String userName
     String email
     String password
-    String confirmPassword    
+    String confirmPassword
 
     static constraints = {
         userName(nullable: false, blank: false)
