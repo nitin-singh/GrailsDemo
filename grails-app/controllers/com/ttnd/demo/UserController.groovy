@@ -4,8 +4,6 @@ import com.ttnd.demo.RegisterCO
 
 class UserController {
 
-    def userService
-
     def index() {}
 
     def register() {
