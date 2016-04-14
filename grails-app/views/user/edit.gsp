@@ -48,14 +48,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="control-label col-sm-4">Confirm Password *</label>
-
-            <div class="col-sm-8">
-                <g:passwordField name="confirmPassword" value="${user.confirmPassword}" class="form-control"></g:passwordField>
-            </div>
-        </div>
-
         <div>
             <g:submitButton value="Edit" action="editPage" name="Edit" class="btn btn-default" params="[userId: user.id]"
                             style="float:right; background-color:#d2d4d9"></g:submitButton>
