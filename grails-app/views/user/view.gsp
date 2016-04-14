@@ -22,6 +22,24 @@
         $(document).ready(function() {
             jQuery('#example').dataTable();
         } );
+
+     /* var table = jQuery("#example").DataTable({
+          "processing": true,
+          "serverSide": true,
+          "ajax": {
+              "url": "/user/viewPage",
+              "type": "post"
+          },
+          "columns": [
+              {"data": "id"},
+              {"data": "firstName"},
+              {"data": "lastName"},
+              {"data": "userName"},
+              {"data": "email"},
+              {"data": "id"}
+          ]
+      });*/
+
     </script>
 </head>
 
