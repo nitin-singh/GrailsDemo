@@ -23,7 +23,7 @@
             jQuery('#example').dataTable();
         } );
 
-     /* var table = jQuery("#example").DataTable({
+      /*var table = jQuery("#example").DataTable({
           "processing": true,
           "serverSide": true,
           "ajax": {
@@ -36,7 +36,6 @@
               {"data": "lastName"},
               {"data": "userName"},
               {"data": "email"},
-              {"data": "id"}
           ]
       });*/
 
