@@ -8,7 +8,6 @@
 <div class="panel-body">
 <!--Form Opening-->
     <g:form class="form-vertical" controller="user" action="editPage">
-        <g:each in="userList" var="user">
         <div class="form-group">
             <label class="control-label col-sm-4">First Name *</label>
 
@@ -58,10 +57,9 @@
         </div>
 
         <div>
-            <g:submitButton value="Edit" action="editPage" name="Edit" class="btn btn-default"
+            <g:submitButton value="Edit" action="editPage" name="Edit" class="btn btn-default" params="[userId: user.id]"
                             style="float:right; background-color:#d2d4d9"></g:submitButton>
         </div>
-        </g:each>
     </g:form>
 <!--Form Closing-->
 </div>

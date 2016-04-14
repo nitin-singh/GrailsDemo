@@ -54,34 +54,23 @@ class UserController {
         } else {
             flash.error = "Problem in accessing user."
         }
+        redirect(controller: 'user', action: 'viewPage')
     }
 
     def edit(Long userId) {
         println userId
-        List<User> userList = User.findById(userId as Long) as List
-//        println "-----------------${userList}-------------------"
-        render(view: '/user/edit', model:[userList: userList])
-      /*  println "--------------------Inside EditPage------------------"
-        User user = User.load(userId as Long)
-        println "---------------${user}-----------------"
-        println "---------------${userId}-----------------"
-        if (user && user.isDirty()) {
-            bindData(user, params, exclude: ['password', 'confirmPassword'])
-            if (user.password || user.confirmPassword) {
-                user.password = params.password
-                user.confirmPassword = params.confirmPassword
-            }
-            flash.message = "User updated successfully."
-        } else {
-            render (view: '/user/edit')
-        }*/
+        User user = User.findById(userId as Long)
+        println "-----------------${user}-------------------"
+        render(view: '/user/edit', model: [user: user])
     }
 
     def editPage(Long userId) {
         println "--------------------Inside EditPage------------------"
+        println "---------------${params}-----------------"
+        println "---------------${userId}-----------------"
+
         User user = User.load(userId as Long)
         println "---------------${user}-----------------"
-        println "---------------${userId}-----------------"
         if (user) {
             bindData(user, params, exclude: ['password', 'confirmPassword'])
             if (user.password || user.confirmPassword) {

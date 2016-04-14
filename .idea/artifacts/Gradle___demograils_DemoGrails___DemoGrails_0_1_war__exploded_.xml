@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="Gradle : demograils:DemoGrails : DemoGrails-0.1.war (exploded)">
-    <output-path>$PROJECT_DIR$/build/classes/artifacts/DemoGrails/exploded/DemoGrails-0.1.war</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/DemoGrails/exploded/DemoGrails-0.1.war</output-path>
     <properties id="gradle-properties">
       <options external-project-path="$PROJECT_DIR$" />
     </properties>
@@ -164,7 +164,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/build/classes/artifacts/DemoGrails/exploded/DemoGrails-0.1.war/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/DemoGrails/exploded/DemoGrails-0.1.war/META-INF/MANIFEST.MF" />
       </element>
     </root>
   </artifact>
