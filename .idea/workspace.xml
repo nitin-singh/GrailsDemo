@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="797a13f4-ff31-40d6-b4da-a518a5f71f53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/com/ttnd/demo/CO/SearchCO.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/groovy/com/ttnd/demo/VO/UserVO.groovy" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/ttnd/dotrips/UserController.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/ttnd/dotripsBindings/CO/RegisterCO$__clinit__closure1.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/ttnd/dotripsBindings/CO/RegisterCO.class" afterPath="" />
@@ -14,17 +12,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/ttnd/dotripsService/UserService.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/resources/resources.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/ttnd/demo/User.class" afterPath="$PROJECT_DIR$/build/classes/main/com/ttnd/demo/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/ttnd/demo/UserController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/ttnd/demo/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/ttnd/demo/UserController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/ttnd/demo/UserController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/ttnd/demo/User.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/ttnd/demo/User.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/view.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/view.gsp" />
     </list>
     <ignored path="DemoGrails.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1712,16 +1699,16 @@
       <option name="number" value="Default" />
       <updated>1460613457724</updated>
       <workItem from="1460613460110" duration="1527000" />
-      <workItem from="1460615042929" duration="15436000" />
+      <workItem from="1460615042929" duration="15768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16963000" />
+    <option name="totallyTimeSpent" value="17295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
