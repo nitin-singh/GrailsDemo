@@ -39,29 +39,29 @@
             <th>Last Name</th>
             <th>User Name</th>
             <th>Email</th>
-           %{-- <th>Edit</th>
-            <th>Delete</th>--}%
+            %{-- <th>Edit</th>
+             <th>Delete</th>--}%
         </tr>
         </thead>
 
-       %{-- <tfoot>
-        <tr>
-            <th>S.No</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>User Name</th>
-            <th>Email</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        </tfoot>--}%
+        %{-- <tfoot>
+         <tr>
+             <th>S.No</th>
+             <th>First Name</th>
+             <th>Last Name</th>
+             <th>User Name</th>
+             <th>Email</th>
+             <th>Edit</th>
+             <th>Delete</th>
+         </tr>
+         </tfoot>--}%
     </table>
 </div>
 
 <script type="text/javascript">
-   /* $(document).ready(function () {
-        jQuery('#example').dataTable();
-    });*/
+    /* $(document).ready(function () {
+     jQuery('#example').dataTable();
+     });*/
 
     $(document).ready(function () {
 
@@ -72,7 +72,17 @@
             "serverSide": true,
             "ajax": {
                 "url": "/user/fetchUsers",
-                "type": "get"
+                "type": "post",
+                data: function (data) {
+                    console.log(data.search);
+                    return {
+                        "start": data.start,
+                        "length": data.length,
+                        "order": JSON.stringify(data.order),
+                        "columns": JSON.stringify(data.columns),
+                        "search": JSON.stringify(data.search)
+                    }
+                }
             },
             "columns": [
                 {"data": "id"},
@@ -80,8 +90,8 @@
                 {"data": "lastName"},
                 {"data": "userName"},
                 {"data": "email"}/*,
-                {"data": "Edit"},
-                {"data": "Delete"}*/
+                 {"data": "Edit"},
+                 {"data": "Delete"}*/
             ]
         });
     });
