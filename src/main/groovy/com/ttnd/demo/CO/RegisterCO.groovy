@@ -16,6 +16,5 @@ class RegisterCO implements Validateable{
         lastName(nullable: false, blank: false)
         email(email: true, nullable: false, blank: false)
         password(nullable: false, blank: false)
-
     }
 }

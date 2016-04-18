@@ -27,12 +27,12 @@ class User {
 
     static namedQueries = {
         search { SearchCO searchCO ->
-            if (searchCO.q) {
+            if (searchCO.fetchSearchValue()) {
                 or {
-                    ilike("firstName", "${searchCO.q}")
-                    ilike("lastName", "${searchCO.q}")
-                    ilike("userName", "${searchCO.q}")
-                    ilike("email", "${searchCO.q}")
+                    ilike("firstName", searchCO.fetchSearchValue())
+                    ilike("lastName", searchCO.fetchSearchValue())
+                    ilike("userName", searchCO.fetchSearchValue())
+                    ilike("email", searchCO.fetchSearchValue())
                 }
             }
         }
