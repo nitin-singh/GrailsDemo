@@ -36,7 +36,9 @@ class UserController {
     }
 
     def delete(Long userId) {
+        println "${userId}"
         User user = User.load(userId)
+        pritnln "-------------------${user}----------------"
         if (user) {
             user.delete(flush: true)
             flash.message = "User deleted successfully."
@@ -75,14 +77,14 @@ class UserController {
     }
 
     def fetchUsers(SearchCO searchCO) {
-        print("Prams  >> "+params)
+//        print("Prams  >> "+params)
         searchCO.length = params.length ? params.int("length") : 10
         searchCO.start = params.start ? params.int("start") : 0
         List<User> userList = User.search(searchCO).list(max: searchCO.length, offset: searchCO.start, order: searchCO.fetchSortingOrder(), sort: searchCO.fetchSortProperty())
         List<UserVO> users = userList.collect {
             new UserVO(id: it.id, firstName: it.firstName, lastName: it.lastName, userName: it.userName, email: it.email,
-                    edit: "<a href='/user/edit'>Edit</a>",
-                    delete: "<a href='/user/delete'>Delete</a>")
+                    edit: "<a href='/user/edit' params='[userId: user.id]'>Edit</a>",
+                    delete: "<a href='/user/delete' params='[userId: user.id]'>Delete</a>")
         }
         render(["data": users, "recordsTotal": User.count(), "recordsFiltered": User.count()] as JSON)
     }
