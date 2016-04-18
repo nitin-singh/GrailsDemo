@@ -3,6 +3,7 @@ package com.ttnd.demo
 import com.ttnd.demo.CO.*
 import com.ttnd.demo.VO.*
 import grails.converters.JSON
+import org.apache.tools.ant.taskdefs.Delete
 import org.grails.web.json.JSONArray
 
 class UserController {
@@ -78,7 +79,8 @@ class UserController {
         searchCO.start = params.start ? params.int("start") : 0
         List<User> userList = User.search(searchCO).list(max: searchCO.length, offset: searchCO.start, order: searchCO.fetchSortingOrder(), sort: searchCO.fetchSortProperty())
         List<UserVO> users = userList.collect {
-            new UserVO(id: it.id, firstName: it.firstName, lastName: it.lastName, userName: it.userName, email: it.email)
+            new UserVO(id: it.id, firstName: it.firstName, lastName: it.lastName, userName: it.userName, email: it.email,
+                    edit: "ddffsdfsdf", delete: "sa")
         }
         render(["data": users, "recordsTotal": User.count(), "recordsFiltered": User.count()] as JSON)
     }

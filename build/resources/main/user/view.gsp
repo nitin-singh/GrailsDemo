@@ -39,12 +39,12 @@
             <th>Last Name</th>
             <th>User Name</th>
             <th>Email</th>
-            %{-- <th>Edit</th>
-             <th>Delete</th>--}%
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         </thead>
 
-        %{-- <tfoot>
+         <tfoot>
          <tr>
              <th>S.No</th>
              <th>First Name</th>
@@ -54,19 +54,15 @@
              <th>Edit</th>
              <th>Delete</th>
          </tr>
-         </tfoot>--}%
+         </tfoot>
     </table>
 </div>
 
 <script type="text/javascript">
-    /* $(document).ready(function () {
-     jQuery('#example').dataTable();
-     });*/
 
     $(document).ready(function () {
 
         var table = jQuery("#example").dataTable({
-//            "dom": '<"top"iflp<"clear">>r<"table-data"t><"bottom"iflp<"clear">>',
             "bFilter": true,
             "processing": true,
             "serverSide": true,
@@ -89,9 +85,9 @@
                 {"data": "firstName"},
                 {"data": "lastName"},
                 {"data": "userName"},
-                {"data": "email"}/*,
-                 {"data": "Edit"},
-                 {"data": "Delete"}*/
+                {"data": "email"},
+                {"data" : "edit"},
+                {"data" : "delete"}
             ]
         });
     });
