@@ -7,7 +7,6 @@
 
 <body>
 
-
 <div class="panel-body">
 <!--Form Opening-->
     <g:form class="form-vertical" controller="user" action="registeration">
@@ -15,7 +14,7 @@
             <label class="control-label col-sm-4">First Name *</label>
 
             <div class="col-sm-8">
-                <g:textField name="firstName" id="firstName" type="text" class="form-control"></g:textField>
+                <g:textField name="firstName" id="firstname" type="text" class="form-control"></g:textField>
             </div>
         </div>
 
@@ -23,7 +22,7 @@
             <label class="control-label col-sm-4">Last Name *</label>
 
             <div class="col-sm-8">
-                <g:textField name="lastName" id="lastName" type="text" class="form-control"></g:textField>
+                <g:textField name="lastName" id="lastname" type="text" class="form-control"></g:textField>
             </div>
         </div>
 
@@ -39,9 +38,10 @@
             <label class="control-label col-sm-4" for="userName">Username *</label>
 
             <div class="col-sm-8">
-                <g:textField name="userName" id="userName" class="form-control"></g:textField>
+                <g:textField name="userName" id="username" class="form-control"></g:textField>
             </div>
-            <div class="alert-danger"> <g:fieldError field="userName" bean="${user}"/></div>
+
+            <div class="alert-danger"><g:fieldError field="userName" bean="${user}"/></div>
         </div>
 
         <div class="form-group">

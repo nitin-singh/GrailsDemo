@@ -5,10 +5,14 @@ import com.ttnd.demo.VO.*
 import grails.converters.JSON
 import org.apache.tools.ant.taskdefs.Delete
 import org.grails.web.json.JSONArray
+import org.springframework.security.access.annotation.Secured
 
+@Secured(['ROLE_USER'])
 class UserController {
 
-    def index() {}
+    def index() {
+        render(view: "index.gsp")
+    }
 
     def register() {
     }
