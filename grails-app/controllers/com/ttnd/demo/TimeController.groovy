@@ -33,4 +33,26 @@ class TimeController {
 
         render "See the Terminal for output"
     }
+
+    def milliseconds() {
+
+        //conversion zoned date time to seconds and milliseconds
+        ZonedDateTime utcDateTime = ZonedDateTime.now(ZoneOffset.UTC)
+        ZoneOffset dubaiOffset = ZoneOffset.of("+04:00");
+        ZonedDateTime dubaiTime = utcDateTime.withZoneSameInstant(dubaiOffset);
+
+        println "UTC time               :" + utcDateTime
+        println "Dubai Time             :" + dubaiTime
+        println "Delhi Time using utc   :" + utcDateTime.toLocalDateTime()
+        println "Delhi Time using dubai :" + dubaiTime.toLocalDateTime()
+        println "UTC milliseconds time  :" + utcDateTime.toEpochSecond() * 1000
+        println "Dubai milliseconds time:" + dubaiTime.toEpochSecond() * 1000
+        println "UTC seconds time       :" + utcDateTime.toEpochSecond()
+        println "Dubai seconds time     :" + dubaiTime.toEpochSecond()
+
+
+        render "UTC TIME: ${utcDateTime} <br> DUBAI TIME: ${dubaiTime}"
+
+
+    }
 }
